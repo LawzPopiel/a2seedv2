@@ -1,0 +1,135 @@
+<ul class="w3-theme">
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#">Wells</a></li>
+  <li><a href="#">Assets</a></li>
+  <li><a href="#">Admin</a></li>
+</ul>
+
+<div style="margin-left:200px;padding:30px 16px;height:1500px;">
+ 
+
+  <h3>PrimeNG testing/demo page</h3>
+  <h4> http://www.primefaces.org/primeng/#/  </h4>
+
+<p-dialog header="Test Dialog 1" [(visible)]="display" modal="modal" showEffect="fade">
+    <p>This is a dialog.  That's about it</p>
+        <footer>
+            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                <button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
+                <button type="button" pButton icon="fa-check" (click)="display=false" label="Yes"></button>
+            </div>
+        </footer>
+</p-dialog>
+
+<button type="text" (click)="showDialog()" pButton icon="fa-external-link-square" label="Show"></button>
+
+
+<div> <h3>   Material Design Flex Layout="row"   </h3></div>
+<div class="layout-row flex-90">
+
+<div class="flex-40"> 
+  flex="40" 
+  <select name="selectThing" [(ngModel)]="thingValue" style="width:200px"> 
+    <option *ngFor="let thing of things" [ngValue]="thing">{{thing.text}}</option>
+  </select> </div>
+<div class="flex-50">
+  flex="50"
+   <p-dropdown [options]="cities" [(ngModel)]="selectedCity" [filter]="true"></p-dropdown>
+  </div>
+
+</div>
+
+
+
+
+<p-panel header="The Angular Fellow" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+An Angular 2 Module is something very different than an ES6 module: An ES6 is a formalization of the typical Javascript module that the community has been using for many years: wrap private details in a closure and expose only the public API we want.
+An Angular 2 Module is mainly a template compilation context but it also helps to define a public API for a subset of functionality as well as help with the dependency injection configuration of our application.
+Angular 2 Modules are actually one of the main enablers for fast and mobile friendly applications, more on this further. Let's now go over the different types of modules and when they should be used.
+</p-panel>
+
+
+
+
+<div class="row-flex">
+  <div class="flex-row-item1">
+    <div>
+      <input type="text" [(ngModel)]='aFilter'>
+    </div>
+    <div>
+      <h4> native Angular 2 filtered selector, filter the list on the left by entering something in the input box</h4> 
+      <h3>{{aFilter}} </h3>
+    </div>
+  </div>
+
+  <div class="flex-row-item2">
+  <table>
+    <tr>
+     <th> text </th>  <th>  value </th> 
+    </tr>
+    <tr *ngFor='let item of things | listFilter: aFilter ' >
+      <td>{{item.text}}</td>
+      <td>{{item.value}}</td>
+    </tr>
+  </table>
+  </div>
+
+</div>
+
+<div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+        <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">PrimeNG Sample with Webpack</span>
+        <span class="defaultText dispTable">This sample demonstrates a sample setup using Webpack.</span>
+    </div>
+</div>
+
+<button pButton type="text" (click)="count()" label="Click"></button>
+
+<button pButton type="text" (click)="count()" icon="fa-check" label="Click"></button>
+
+<button pButton type="text" (click)="count()" icon="fa-check" iconPos="right" label="Click"></button>
+
+<button pButton type="text" (click)="count()" icon="fa-check"></button>
+
+<button pButton type="text" (click)="count()" icon="fa-check" [disabled]="true" label="Disabled"></button>
+
+Number of clicks: {{clicks}}
+
+
+
+
+<p-tabView orientation="top" >
+    <p-tabPanel header="Header 1">
+      <p-dataTable #dt  [value]="things" [rows]="5" [paginator]="true" [editable]="true" >
+    <p-column field="text" header="text" [editable]="true"></p-column>
+    <p-column field="value" header="value" [editable]="true"></p-column>
+</p-dataTable>
+<button type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()"></button>
+
+    </p-tabPanel>
+    <p-tabPanel header="Header 2" >
+        <p-panelMenu [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
+    </p-tabPanel>
+    <p-tabPanel header="Header 3">
+        <p-tabMenu [model]="items"></p-tabMenu>   
+    </p-tabPanel>
+
+    <p-tabPanel header="Header 4">
+    <p-dropdown [options]="cities" [(ngModel)]="selectedCity"></p-dropdown>
+    </p-tabPanel>
+</p-tabView>
+
+
+<p-dataTable #dt  [value]="things" [rows]="5" [paginator]="true" [editable]="true" >
+    <p-column field="text" header="text" [editable]="true"></p-column>
+    <p-column field="value" header="value" [editable]="true"></p-column>
+</p-dataTable>
+<button type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()"></button>
+
+
+</div>
+<footer>
+ <div class="w3-container w3-theme" style="margin-left:200px;padding:1px">
+  <p style="text-align:center">  © Pioneer Natural Resources 2016</p>
+</div> 
+</footer>
